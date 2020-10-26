@@ -1,0 +1,19 @@
+{
+  "name": "koajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "babel": "^6.23.0",
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "nodemon": "^2.0.6"
+  }
+}
