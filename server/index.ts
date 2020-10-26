@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router')
+const logger = require('koa-logger')
 
 const app = new Koa();
 const router = new Router()
@@ -10,5 +11,6 @@ router.get('/', async ctx => {
 })
 
 app.use(router.routes()).use(router.allowedMethods());
+app.use(logger())
 
 app.listen(3000);
