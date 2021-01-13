@@ -1,16 +1,18 @@
 const Koa = require('koa');
-const Router = require('koa-router')
-const logger = require('koa-logger')
-const parser = require('koa-bodyparser')
+const Router = require('koa-router');
+const cors = require('@koa/cors');
+const logger = require('koa-logger');
+const parser = require('koa-bodyparser');
 const ObjectID = require("mongodb").ObjectID;
 
 const app = new Koa();
-const router = new Router()
+const router = new Router();
 
 require("./mongo/mongo.ts")(app);
 
 app.use(logger());
 app.use(parser());
+app.use(cors());
 app.use(router.routes()).use(router.allowedMethods());
 
 router.get('/', async (ctx: any) => {
