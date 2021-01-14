@@ -35,8 +35,8 @@ router.delete('/api/feed/:id', async (ctx: any) => {
 });
 
 
-app.listen(3000, async () => {
-    console.log('Server started on: ' + 'http://localhost:3000/')
+app.listen(5000, async () => {
+    console.log('Server started on: ' + 'http://localhost:5000/')
 })
 .on('error', (err: any) =>{
     console.log(err)
