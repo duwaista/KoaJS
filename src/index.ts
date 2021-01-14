@@ -9,7 +9,7 @@ const ObjectID = require("mongodb").ObjectID;
 const app = new Koa();
 const router = new Router();
 
-require("./mongo/mongo.ts")(app);
+require("./mongo/mongo")(app);
 
 app.use(logger());
 app.use(parser());
