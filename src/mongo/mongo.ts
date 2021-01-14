@@ -1,6 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const Mongo_URL = "YOUR_MONGODB_URL"
-
+const Mongo_URL = "mongodb+srv://tester:test@cluster0-xctsm.mongodb.net/test"
 module.exports = function (app: any) {
     MongoClient.connect(Mongo_URL, { useUnifiedTopology: true })
         .then((connection: any) => {
