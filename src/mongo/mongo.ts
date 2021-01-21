@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
-const Mongo_URL = "mongodb+srv://tester:test@cluster0-xctsm.mongodb.net/test"
+const MongoURL = process.env.MONGO_URL;
 module.exports = function (app: any) {
-    MongoClient.connect(Mongo_URL, { useUnifiedTopology: true })
+    MongoClient.connect(MongoURL, { useUnifiedTopology: true })
         .then((connection: any) => {
             app.feed = connection.db('feed').collection('posted');
         })

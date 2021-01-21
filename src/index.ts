@@ -5,6 +5,7 @@ const cors = require('@koa/cors');
 const logger = require('koa-logger');
 const parser = require('koa-bodyparser');
 const ObjectID = require("mongodb").ObjectID;
+require('dotenv').config()
 
 const app = new Koa();
 const router = new Router();
