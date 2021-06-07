@@ -1,11 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
 const MongoURL = process.env.MONGO_URL;
-module.exports = function (app: any) {
+
+module.exports = function (app) {
     MongoClient.connect(MongoURL, { useUnifiedTopology: true })
-        .then((connection: any) => {
+        .then((connection) => {
             app.feed = connection.db('feed').collection('posted');
         })
-        .catch((err: any) => {
-            console.log(err)
+        .catch((err) => {
+            console.log(err);
     })
 }
