@@ -1,5 +1,5 @@
 # KoaJS
-KoaJS + TS backend.
+KoaJS + MongoDB.
 
 ## How to use
 
