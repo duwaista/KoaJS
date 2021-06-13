@@ -18,14 +18,10 @@ app.use(router.routes()).use(router.allowedMethods());
 
 router.get('/api/feed', async (ctx) => {
     ctx.body = await ctx.app.feed.find().toArray();
-    ctx.response.status = 200;
-    console.log(ctx.request);
 });
 
 router.post('/api/feed', async (ctx) => {
     ctx.body = await ctx.app.feed.insertOne(ctx.request.body);
-    ctx.response.status = 200;
-    console.log(ctx.response.body.insertedId);
 });
 
 router.delete('/api/feed/:id', async (ctx) => {
@@ -33,9 +29,21 @@ router.delete('/api/feed/:id', async (ctx) => {
     ctx.body = await ctx.app.feed.deleteOne(docQuery);
 });
 
+router.get('/api/user', async (ctx) => {
+    ctx.body = await ctx.app.user.find().toArray();
+});
+
+router.get('/api/user/:id', async (ctx) => {
+    ctx.body = await ctx.app.user.findOne({"uid": ctx.params.id.toString()});
+});
+
+router.post('/api/user/', async (ctx) => {
+    ctx.body = await ctx.app.user.insertOne(ctx.request.body);
+});
+
 app.listen(process.env.PORT || 5000, async () => {
     console.log('Server started on: ' + 'http://localhost:5000/')
 })
 .on('error', (err) =>{
     console.log(err);
-})
+});
